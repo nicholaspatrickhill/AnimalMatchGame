@@ -41,11 +41,11 @@ namespace MatchGame
             if (matchesFound == 8)
             {
                 timer.Stop();
-                timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
+                timeTextBlock.Text += " - Play again?";
             }
         }
 
-        private void SetUpGame()
+        public void SetUpGame()
         {
             List<string> animalEmoji = new List<string>()
             {
@@ -65,6 +65,7 @@ namespace MatchGame
             {
                 if (textBlock.Name != "timeTextBlock")
                 {
+                    textBlock.Visibility = Visibility.Visible;
                     int index = random.Next(animalEmoji.Count);
                     string nextEmoji = animalEmoji[index];
                     textBlock.Text = nextEmoji;
