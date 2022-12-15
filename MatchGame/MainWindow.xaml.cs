@@ -37,11 +37,11 @@ namespace MatchGame
         private void Timer_Tick(object? sender, EventArgs e)
         {
             tenthsOfSecondsElapsed++;
-            timeTextBox.Text = (tenthsOfSecondsElapsed / 10F).ToString("0.0s");
+            timeTextBlock.Text = (tenthsOfSecondsElapsed / 10F).ToString("0.0s");
             if (matchesFound == 8)
             {
                 timer.Stop();
-                timeTextBox.Text = timeTextBox.Text + " - Play again?";
+                timeTextBlock.Text = timeTextBlock.Text + " - Play again?";
             }
         }
 
@@ -102,7 +102,7 @@ namespace MatchGame
             }
         }
 
-        private void TimeTextBox_MouseDown(object sender, MouseButtonEventArgs e)
+        private void TimeTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (matchesFound == 8)
             {
